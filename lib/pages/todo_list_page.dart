@@ -14,29 +14,56 @@ class TodoListPage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(
-                controller: emailController,
-                decoration: InputDecoration(
-                  labelText: 'E-mail',
-                ),
-                onChanged: onChanged,
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Adiciona uma tarefa',
+                        hintText: 'Ex: Estudar Flutter',
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.purple,
+                      padding: EdgeInsets.all(13),
+                    ),
+                    child: Icon(
+                      Icons.add,
+                      size: 30,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
               ),
-              ElevatedButton(
-                onPressed: login,
-                child: Text('Entrar'))
+              SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Você possui 0 tarefas pendentes',
+                    ),
+                  ),
+                  SizedBox(width: 8,),
+                  ElevatedButton(onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    padding: EdgeInsets.all(13)
+                  ),
+                  child: Text('Limpar tudo', style: TextStyle(
+                    color: Colors.black
+                  ),),
+                  ),
+                ]
+              )
             ],
           ),
         ),
-        ),
-        );
-  }
-
-  void login(){
-    String text = emailController.text;
-    print(text);
-  }
-
-  void onChanged(String text){
-    print(text);
+      ),
+    );
   }
 }
