@@ -41,6 +41,29 @@ class TodoListPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 16),
+              ListView(
+                shrinkWrap: true,
+                children: [
+                  ListTile(
+                    title: Text('Tarefa 1'),
+                    subtitle: Text('30/01/2026'),
+                    leading: Icon(Icons.save, size: 30,),
+                    onTap: (){
+                      print('Tarefa 1');
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Tarefa 2'),
+                    subtitle: Text('30/01/2026'),
+                    leading: Icon(Icons.save, size: 30,),
+                    onTap: (){
+                      print('Tarefa 2');
+                    },
+                  )
+                ],
+              ),
+
+              SizedBox(height: 16),
               Row(
                 children: [
                   Expanded(
